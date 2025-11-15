@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DE.PO.NA Praha, s.r.o. — Ceník</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --primary:#007BFF;
+    --accent:#FFD700;
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --card:#f8faff;
+    --radius:12px;
+    font-family:'Inter',sans-serif;
+}
+body{
+    margin:0;
+    background:var(--bg);
+    color:#0f172a;
+    line-height:1.6;
+}
+.wrap{
+    max-width:1200px;
+    margin:0 auto;
+    padding:24px;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    padding:10px 24px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.logo-img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    border-radius:8px;
+}
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+nav a{
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:600;
+    transition:color 0.3s;
+}
+nav a:hover{
+    color:var(--primary);
+}
+.hero{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:32px;
+    gap:24px;
+}
+.hero-text{
+    flex:1;
+}
+.hero h1{
+    font-size:42px;
+    margin-bottom:16px;
+}
+.hero p{
+    color:var(--muted);
+    font-size:18px;
+    margin-bottom:24px;
+}
+.cta{
+    background:var(--accent);
+    color:#000;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:opacity 0.3s;
+    display:inline-block;
+}
+.cta:hover{
+    opacity:0.85;
+}
+.hero img{
+    flex:1;
+    max-width:100%;
+    height:350px;
+    border-radius:12px;
+    object-fit:cover;
+}
+.section{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:60px;
+    gap:32px;
+    background:var(--card);
+    padding:24px;
+    border-radius:var(--radius);
+}
+.section:nth-child(even){
+    flex-direction:row-reverse;
+}
+.section img{
+    flex:1;
+    max-width:100%;
+    height:250px;
+    border-radius:12px;
+    object-fit:cover;
+}
+.section-text{
+    flex:1;
+}
+.section-text h2{
+    font-size:28px;
+    margin-bottom:16px;
+    color:var(--primary);
+}
+.section-text p{
+    color:var(--muted);
+    font-size:16px;
+    margin-bottom:16px;
+}
+.price-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+}
+.price-table th, .price-table td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+}
+.price-table th{
+    background:var(--primary);
+    color:#fff;
+}
+.price-section{
+    margin-top:50px;
+    border-radius:var(--radius);
+    background:#f0f8ff;
+    padding:20px;
+}
+footer{
+    margin-top:60px;
+    padding:36px 24px;
+    text-align:center;
+    color:#ffffff;
+    font-size:14px;
+    background:#003366;
+}
+footer a{
+    color:#ffd700;
+    text-decoration:none;
+}
+footer a:hover{
+    text-decoration:underline;
+}
+@media(max-width:900px){
+    .hero, .section{
+        flex-direction:column;
+    }
+    .hero img, .section img{
+        height:auto;
+    }
+    .price-table th, .price-table td{
+        font-size:14px;
+        padding:8px;
+    }
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+    <div class="brand">
+        <img src="https://depona.cz/wp-content/uploads/2023/05/logo.jpg" alt="DE.PO.NA logo" class="logo-img">
+        <div>
+            <h1 style="margin:0;font-size:18px;">DE.PO.NA Praha, s.r.o.</h1>
+            <div style="color:var(--muted);font-weight:600;font-size:12px;">Likvidace odpadu • Kontejnerová doprava</div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/depona.cz/">Domů</a></li>
+            <li><a href="/depona.cz/sluzby">Služby</a></li>
+            <li><a href="/depona.cz/cenik">Ceník</a></li>
+            <li><a href="/depona.cz/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Ceník platný od 1.4.2025</h1>
+            <p>Veškerý materiál vážen na certifikované váze LESYCO. Ceny jsou uvedeny bez 21% DPH.</p>
+        </div>
+        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava4.jpg" alt="Ceník DE.PO.NA">
+    </section>
+
+    <!-- Příjem odpadů -->
+    <section class="price-section">
+        <h2>PŘÍJEM ODPADŮ</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>TYP</th><th>Kategorie odpadu</th><th>Cena/1t</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>17 01 01</td><td>Beton</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 02</td><td>Cihly</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 03</td><td>Tašky a keramické výrobky</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 07</td><td>Směsi betonu, cihel, tašek a keramických výrobků</td><td>550,- Kč</td></tr>
+                <tr><td>17 05 04</td><td>Zemina a kamení</td><td>420,- Kč</td></tr>
+                <tr><td>17 05 06</td><td>Vytěžená hlušina</td><td>420,- Kč</td></tr>
+                <tr><td>20 02 01</td><td>Biologicky rozložitelný odpad</td><td>1100,- Kč</td></tr>
+                <tr><td>20 02 02</td><td>Zemina a kameny</td><td>420,- Kč</td></tr>
+                <tr><td>20 03 01</td><td>Směsný komunální odpad</td><td>3700,- Kč</td></tr>
+                <tr><td>17 09 04</td><td>Smíšené stavební a demoliční odpady</td><td>3700,- Kč</td></tr>
+                <tr><td>20 03 07</td><td>Objemný odpad</td><td>3700,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:10px;">Pokud bude v jedné dodávce obsažen i jiný odpad, bude účtována cena odpadu 17 09 04.</p>
+    </section>
+
+    <!-- Ceník materiálů -->
+    <section class="price-section">
+        <h2>CENÍK MATERIÁLŮ</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>TYP</th><th>CENA/1t</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Písek zásypový 0-8</td><td>370,- Kč</td></tr>
+                <tr><td>Písek betonářský 04</td><td>450,- Kč</td></tr>
+                <tr><td>Písek univerzální říční</td><td>490,- Kč</td></tr>
+                <tr><td>Štěrk 4-8</td><td>790,- Kč</td></tr>
+                <tr><td>Štěrk 8-16, 16-32</td><td>615,- Kč</td></tr>
+                <tr><td>Štěrk 16-22 *</td><td>615,- Kč</td></tr>
+                <tr><td>Štěrk 32-63</td><td>605,- Kč</td></tr>
+                <tr><td>Štěrk 0-32, 0-63 *</td><td>470,- Kč</td></tr>
+                <tr><td>Suťový recykl. 0-8, 12-35, 35-100 *</td><td>20,- Kč</td></tr>
+                <tr><td>Tříděná zemina – základní</td><td>200,- Kč</td></tr>
+                <tr><td>Zahradnický substrát trávníkový *</td><td>1200,- Kč</td></tr>
+                <tr><td>Zahradnický substrát zeleninový *</td><td>1400,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p>* na objednání</p>
+    </section>
+
+    <!-- Ceník služeb -->
+    <section class="price-section">
+        <h2>CENÍK SLUŽEB</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>TYP</th><th>Za hod / km</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>VOLVO FH tahač + návěs</td><td>1500,- Kč / 60,- Kč</td></tr>
+                <tr><td>VOLVO FM tahač + návěs</td><td>1500,- Kč / 60,- Kč</td></tr>
+                <tr><td>IVECO nosič kontejneru 12 t</td><td>800,- Kč / 35,- Kč</td></tr>
+                <tr><td>Nakladač LIEBHERR 524</td><td>1200 Kč/hod</td></tr>
+                <tr><td>Nakladač LIEBHERR 542</td><td>1500 Kč/hod</td></tr>
+            </tbody>
+        </table>
+        <p>!!! NOVĚ možnost samostatného vážení vozidel do celkové hmotnosti 30t – používáme certifikovanou váhu LESYCO !!!</p>
+    </section>
+
+    <!-- Likvidace odpadů – kontejnery -->
+    <section class="price-section">
+        <h2>LIKVIDACE ODPADŮ – KONTEJNERY</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>TYP</th><th>CENA</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>3 m³ zemina – odpad</td><td>2800,- Kč</td></tr>
+                <tr><td>3 m³ stavební suť – odpad</td><td>3400,- Kč</td></tr>
+                <tr><td>3 m³ směsný – objemný odpad</td><td>4700,- Kč</td></tr>
+                <tr><td>6 m³ směsný – objemný odpad</td><td>5900,- Kč</td></tr>
+                <tr><td>6 m³ lehká stavební suť</td><td>4000,- Kč</td></tr>
+                <tr><td>9 m³ směsný – objemný odpad</td><td>7900,- Kč</td></tr>
+                <tr><td>10 m³ směsný – objemný odpad</td><td>8200,- Kč</td></tr>
+                <tr><td>10 m³ lehká stavební suť (YTONG)</td><td>5900,- Kč</td></tr>
+                <tr><td>12 m³ směsný – objemný odpad</td><td>11000,- Kč</td></tr>
+                <tr><td>13,5 m³ směsný – objemný odpad</td><td>12100,- Kč</td></tr>
+                <tr><td>9 m³ větve a klestí</td><td>3500,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p>Při přistavení kontejneru na dobu delší než 3 dny účtujeme 100 Kč/den.</p>
+        <p>Na provozovně přijímáme i platební karty. Můžete si u nás zakoupit kávu značky Dallmayr Kaffee.</p>
+    </section>
+</main>
+
+<!-- Patička -->
+<footer>
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px;">
+    
+    <!-- Navigace -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <a href="/depona.cz/">Domů</a>
+      <a href="/depona.cz/sluzby">Služby</a>
+      <a href="/depona.cz/cenik">Ceník</a>
+      <a href="/depona.cz/kontakt">Kontakt</a>
+    </div>
+    
+    <!-- Kontakty -->
+    <div style="display:flex; gap:15px; flex-wrap:wrap; font-size:13px; align-items:center;">
+      
+      <!-- Telefon -->
+      <span style="display:flex; align-items:center; gap:4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#ffffff" viewBox="0 0 512 512">
+          <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/>
+        </svg>
+        <a href="tel:+420777349447">+420 777 349 447</a>
+      </span>
+      
+      <!-- Email -->
+      <span style="display:flex; align-items:center; gap:4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#ffffff" viewBox="0 0 502.3 502.3">
+          <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+        </svg>
+        <a href="mailto:depona@depona.cz">depona@depona.cz</a>
+      </span>
+      
+      <!-- Adresa -->
+      <span style="display:flex; align-items:center; gap:4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#ffffff" viewBox="0 0 384 512">
+          <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+        </svg>
+        <a href="https://mapy.com/cs/letecka?q=DE.PO.NA%20PRAHA%2C%20s.r.o.&source=firm&id=1964010&ds=2&x=14.4802833&y=49.9967667&z=17" target="_blank">
+          ulice Pramenná, 148 00 Praha 4 – Kunratice
+        </a>
+      </span>
+    </div>
+    
+  </div>
+</footer>
+
+</body>
+</html>
