@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DE.PO.NA Praha, s.r.o. — Služby</title>
+<title>DE.PO.NA Praha, s.r.o. — Ceník</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://hokejiceksite.github.io/depona.cz/files/png/favicon.png">
 <style>
@@ -37,7 +37,6 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    flex-wrap: wrap;
 }
 .brand{
     display:flex;
@@ -56,7 +55,6 @@ nav ul{
     list-style:none;
     padding:0;
     margin:0;
-    flex-wrap: wrap;
 }
 nav a{
     color:var(--muted);
@@ -67,38 +65,25 @@ nav a{
 nav a:hover{
     color:var(--primary);
 }
-.section{
+.hero{
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    margin-top:60px;
-    gap:32px;
-    background:var(--card);
-    padding:24px;
-    border-radius:var(--radius);
+    justify-content:space-between;
+    margin-top:32px;
+    gap:24px;
 }
-.section:nth-child(even){
-    flex-direction:row-reverse;
-}
-.section img{
-    flex:1;
-    max-width:100%;
-    height:350px;
-    border-radius:12px;
-    object-fit:cover;
-}
-.section-text{
+.hero-text{
     flex:1;
 }
-.section-text h2{
-    font-size:28px;
+.hero h1{
+    font-size:42px;
     margin-bottom:16px;
-    color:var(--primary);
 }
-.section-text p{
+.hero p{
     color:var(--muted);
-    font-size:16px;
-    margin-bottom:16px;
+    font-size:18px;
+    margin-bottom:24px;
 }
 .cta{
     background:var(--accent);
@@ -109,10 +94,36 @@ nav a:hover{
     font-weight:600;
     transition:opacity 0.3s;
     display:inline-block;
-    margin-top:16px;
 }
 .cta:hover{
     opacity:0.85;
+}
+.hero img{
+    flex:1;
+    max-width:100%;
+    height:350px;
+    border-radius:12px;
+    object-fit:cover;
+}
+.price-section{
+    margin-top:50px;
+    border-radius:var(--radius);
+    background:#f0f8ff;
+    padding:20px;
+}
+.price-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+.price-table th, .price-table td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+}
+.price-table th{
+    background:var(--primary);
+    color:#fff;
 }
 footer{
     margin-top:60px;
@@ -153,35 +164,21 @@ footer a:hover{
     height:16px;
 }
 @media(max-width:900px){
-    .section{
+    .hero{
         flex-direction:column;
     }
-    .section img{
+    .hero img{
         height:auto;
     }
-    .footer-flex{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-}
-@media(max-width:600px){
-    .wrap{
-        padding:16px;
-    }
-    .section-text h2{
-        font-size:24px;
-    }
-    .section-text p{
+    .price-table th, .price-table td{
         font-size:14px;
-    }
-    .cta{
-        padding:10px 16px;
-        font-size:16px;
+        padding:8px;
     }
 }
 </style>
 </head>
 <body>
+
 <header class="wrap">
     <div class="brand">
         <img src="https://depona.cz/wp-content/uploads/2023/05/logo.jpg" alt="DE.PO.NA logo" class="logo-img">
@@ -203,45 +200,109 @@ footer a:hover{
 </header>
 
 <main class="wrap">
-    <!-- Odvoz a likvidace odpadu -->
-    <section class="section">
-        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava7.jpg" alt="Odvoz a likvidace odpadu">
-        <div class="section-text">
-            <h2>Odvoz a likvidace Odpadu</h2>
-            <p>Likvidace odpadu je důležitou součástí ochrany životního prostředí. Nabízíme kompletní služby zahrnující odvoz a ekologickou likvidaci.</p>
-            <p>Přistavíme vhodný kontejner podle množství odpadu, který potřebujete odvézt a zlikvidovat.</p>
-            <p>Jsme flexibilní a spolehlivá firma s dlouholetými zkušenostmi. Rádi poradíme, odpad odvezeme a zlikvidujeme profesionálně.</p>
-            <a class="cta" href="/depona.cz/kontakt">Objednat odvoz odpadu</a>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Ceník platný od 1.4.2025</h1>
+            <p>Veškerý materiál vážen na certifikované váze LESYCO. Ceny jsou uvedeny bez 21% DPH.</p>
         </div>
+        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava4.jpg" alt="Ceník DE.PO.NA">
     </section>
 
-    <!-- Kontejnerová doprava -->
-    <section class="section">
-        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava2.jpg" alt="Kontejnerová doprava 3–13,5 m³">
-        <div class="section-text">
-            <h2>Kontejnerová doprava 3–13,5 m³</h2>
-            <p>Nabízíme kontejnerovou dopravu pro stavební a komunální odpad od 3 m³ do 13,5 m³. Přizpůsobíme se Vašim potřebám.</p>
-            <p>Naši pracovníci poradí s výběrem vhodného kontejneru a zajistí rychlé přistavení i odvoz. Veškeré odpady zpracováváme ekologicky a v souladu s legislativou.</p>
-            <a class="cta" href="/depona.cz/kontakt">Objednat kontejner</a>
-        </div>
+    <!-- PŘÍJEM ODPADŮ -->
+    <section class="price-section">
+        <h2>PŘÍJEM ODPADŮ</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>TYP</th><th>Kategorie odpadu</th><th>Cena/1t</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>17 01 01</td><td>Beton</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 02</td><td>Cihly</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 03</td><td>Tašky a keramické výrobky</td><td>550,- Kč</td></tr>
+                <tr><td>17 01 07</td><td>Směsi betonu, cihel, tašek a keramických výrobků</td><td>550,- Kč</td></tr>
+                <tr><td>17 05 04</td><td>Zemina a kamení</td><td>420,- Kč</td></tr>
+                <tr><td>17 05 06</td><td>Vytěžená hlušina</td><td>420,- Kč</td></tr>
+                <tr><td>20 02 01</td><td>Biologicky rozložitelný odpad</td><td>1100,- Kč</td></tr>
+                <tr><td>20 02 02</td><td>Zemina a kameny</td><td>420,- Kč</td></tr>
+                <tr><td>20 03 01</td><td>Směsný komunální odpad</td><td>3700,- Kč</td></tr>
+                <tr><td>17 09 04</td><td>Smíšené stavební a demoliční odpady</td><td>3700,- Kč</td></tr>
+                <tr><td>20 03 07</td><td>Objemný odpad</td><td>3700,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top:10px;">Pokud bude v jedné dodávce obsažen i jiný odpad, bude účtována cena odpadu 17 09 04.</p>
     </section>
 
-    <!-- Rozvoz materiálů -->
-    <section class="section">
-        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava3.jpg" alt="Rozvoz materiálů">
-        <div class="section-text">
-            <h2>Rozvoz materiálů</h2>
-            <p>Zajišťujeme rozvoz stavebních materiálů, písku, kameniva a zahradní zeminy na místo určení moderním vozovým parkem.</p>
-            <p>Zaručíme rychlý a profesionální servis přizpůsobený Vašim požadavkům.</p>
-            <a class="cta" href="/depona.cz/kontakt">Objednat rozvoz materiálu</a>
-        </div>
+    <!-- CENÍK MATERIÁLŮ -->
+    <section class="price-section">
+        <h2>CENÍK MATERIÁLŮ</h2>
+        <table class="price-table">
+            <thead><tr><th>TYP</th><th>CENA/1t</th></tr></thead>
+            <tbody>
+                <tr><td>Písek zásypový 0-8</td><td>370,- Kč</td></tr>
+                <tr><td>Písek betonářský 04</td><td>450,- Kč</td></tr>
+                <tr><td>Písek univerzální říční</td><td>490,- Kč</td></tr>
+                <tr><td>Štěrk 4-8</td><td>790,- Kč</td></tr>
+                <tr><td>Štěrk 8-16, 16-32</td><td>615,- Kč</td></tr>
+                <tr><td>Štěrk 16-22 *</td><td>615,- Kč</td></tr>
+                <tr><td>Štěrk 32-63</td><td>605,- Kč</td></tr>
+                <tr><td>Štěrk 0-32, 0-63 *</td><td>470,- Kč</td></tr>
+                <tr><td>Suťový recykl. 0-8, 12-35, 35-100 *</td><td>20,- Kč</td></tr>
+                <tr><td>Tříděná zemina – základní</td><td>200,- Kč</td></tr>
+                <tr><td>Zahradnický substrát trávníkový *</td><td>1200,- Kč</td></tr>
+                <tr><td>Zahradnický substrát zeleninový *</td><td>1400,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p>* na objednání</p>
+    </section>
+
+    <!-- CENÍK SLUŽEB -->
+    <section class="price-section">
+        <h2>CENÍK SLUŽEB</h2>
+        <table class="price-table">
+            <thead><tr><th>TYP</th><th>Za hod / km</th></tr></thead>
+            <tbody>
+                <tr><td>VOLVO FH tahač + návěs</td><td>1500,- Kč / 60,- Kč</td></tr>
+                <tr><td>VOLVO FM tahač + návěs</td><td>1500,- Kč / 60,- Kč</td></tr>
+                <tr><td>IVECO nosič kontejneru 12 t</td><td>800,- Kč / 35,- Kč</td></tr>
+                <tr><td>Nakladač LIEBHERR 524</td><td>1200 Kč/hod</td></tr>
+                <tr><td>Nakladač LIEBHERR 542</td><td>1500 Kč/hod</td></tr>
+                <tr><td>Nakladač LIEBHERR 538</td><td>1500 Kč/hod</td></tr>
+                <tr><td>LIEBHERR LH24</td><td>1500 Kč/hod</td></tr>
+            </tbody>
+        </table>
+        <p>!!! NOVĚ možnost samostatného vážení vozidel do celkové hmotnosti 30t – používáme certifikovanou váhu LESYCO !!!</p>
+    </section>
+
+    <!-- LIKVIDACE ODPADŮ – KONTEJNERY -->
+    <section class="price-section">
+        <h2>LIKVIDACE ODPADŮ – KONTEJNERY</h2>
+        <table class="price-table">
+            <thead><tr><th>TYP</th><th>CENA</th></tr></thead>
+            <tbody>
+                <tr><td>3 m³ zemina – odpad</td><td>2800,- Kč</td></tr>
+                <tr><td>3 m³ stavební suť – odpad</td><td>3400,- Kč</td></tr>
+                <tr><td>3 m³ směsný – objemný odpad</td><td>4700,- Kč</td></tr>
+                <tr><td>6 m³ směsný – objemný odpad</td><td>5900,- Kč</td></tr>
+                <tr><td>6 m³ lehká stavební suť</td><td>4000,- Kč</td></tr>
+                <tr><td>9 m³ směsný – objemný odpad</td><td>7900,- Kč</td></tr>
+                <tr><td>10 m³ směsný – objemný odpad</td><td>8200,- Kč</td></tr>
+                <tr><td>10 m³ lehká stavební suť (YTONG)</td><td>5900,- Kč</td></tr>
+                <tr><td>12 m³ směsný – objemný odpad</td><td>11000,- Kč</td></tr>
+                <tr><td>13,5 m³ směsný – objemný odpad</td><td>12100,- Kč</td></tr>
+                <tr><td>9 m³ větve a klestí</td><td>3500,- Kč</td></tr>
+            </tbody>
+        </table>
+        <p>Při přistavení kontejneru na dobu delší než 3 dny účtujeme 100 Kč/den.</p>
+        <p>Na provozovně přijímáme i platební karty. Můžete si u nás zakoupit kávu značky Dallmayr Kaffee.</p>
     </section>
 </main>
 
+<!-- Footer -->
 <footer>
   <div class="footer-flex">
     <div style="display:flex; gap:20px; flex-wrap:wrap;">
-      <a href="/depona.cz/">Úvod</a>
+      <a href="/depona.cz/">Úvod</a>      
       <a href="/depona.cz/o-nas">O nás</a>
       <a href="/depona.cz/sluzby">Služby</a>
       <a href="/depona.cz/rozhodnuti">Rozhodnutí</a>
@@ -259,7 +320,9 @@ footer a:hover{
       </span>
       <span>
         <img src="https://hokejiceksite.github.io/depona.cz/files/svg/lokalita.svg" alt="lokalita">
-        <a href="https://mapy.cz/zakladni?source=firm&id=1964010" target="_blank">ulice Pramenná, 148 00 Praha 4 – Kunratice</a>
+        <a href="https://mapy.cz/zakladni?source=firm&id=1964010" target="_blank">
+          ulice Pramenná, 148 00 Praha 4 – Kunratice
+        </a>
       </span>
     </div>
   </div>
@@ -267,5 +330,6 @@ footer a:hover{
     &copy; 2025 DE.PO.NA Praha, s.r.o. Všechna práva vyhrazena.
   </div>
 </footer>
+
 </body>
 </html>
