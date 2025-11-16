@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DE.PO.NA Praha, s.r.o. — Domů</title>
+<title>DE.PO.NA Praha, s.r.o. — O nás</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://hokejiceksite.github.io/depona.cz/files/png/favicon.png">
 <style>
@@ -67,45 +67,52 @@ nav a{
 nav a:hover{
     color:var(--primary);
 }
-.hero{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    margin-top:32px;
-    gap:24px;
+.history{
+    margin-top:60px;
+    padding:24px;
+    background:var(--card);
+    border-radius:var(--radius);
 }
-.hero-text{
-    flex:1;
-}
-.hero h1{
-    font-size:42px;
-    margin-bottom:16px;
-}
-.hero p{
-    color:var(--muted);
-    font-size:18px;
+.history h2{
+    color:var(--primary);
     margin-bottom:24px;
 }
-.cta{
-    background:var(--accent);
-    color:#000;
-    padding:12px 20px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition:opacity 0.3s;
-    display:inline-block;
+.history-item{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:24px;
+    position:relative;
 }
-.cta:hover{
-    opacity:0.85;
+.history-item img{
+    width:36px;
+    height:36px;
+    flex-shrink:0;
+    margin-top:4px;
 }
-.hero img{
+.history-item::before{
+    content:'';
+    position:absolute;
+    left:18px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--primary);
+    z-index:-1;
+}
+.history-item:first-child::before{
+    top:18px;
+}
+.history-item:last-child::before{
+    bottom:18px;
+}
+.history-text{
     flex:1;
-    max-width:100%;
-    height:350px;
-    border-radius:12px;
-    object-fit:cover;
+}
+.history-text p{
+    margin:0;
+    color:var(--muted);
+    font-size:16px;
 }
 .section{
     display:flex;
@@ -117,18 +124,15 @@ nav a:hover{
     padding:24px;
     border-radius:var(--radius);
 }
-.section:nth-child(even){
-    flex-direction:row-reverse;
-}
 .section img{
     flex:1;
     max-width:100%;
-    height:250px;
+    height:300px;
     border-radius:12px;
     object-fit:cover;
 }
 .section-text{
-    flex:1;
+    flex:2;
 }
 .section-text h2{
     font-size:28px;
@@ -140,63 +144,19 @@ nav a:hover{
     font-size:16px;
     margin-bottom:16px;
 }
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:24px;
-    margin-top:40px;
+.cta{
+    background:var(--accent);
+    color:#000;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:opacity 0.3s;
+    display:inline-block;
+    margin-top:16px;
 }
-.service{
-    background:#fff;
-    padding:20px;
-    border-radius:var(--radius);
-    box-shadow:0 6px 20px rgba(2,6,23,0.08);
-    transition:transform 0.3s;
-    text-align:center;
-}
-.service:hover{
-    transform:translateY(-5px);
-}
-.service h3{
-    margin-bottom:10px;
-    color:var(--primary);
-}
-.sponsors{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-    margin-top:60px;
-    padding:24px;
-    background:#f0f8ff;
-    border-radius:var(--radius);
-    text-align:center;
-}
-.sponsors img{
-    max-height:60px;
-    object-fit:contain;
-    transition:transform 0.3s;
-}
-.sponsors a:hover img{
-    transform:scale(1.1);
-}
-.history{
-    margin-top:60px;
-    padding:24px;
-    background:var(--card);
-    border-radius:var(--radius);
-}
-.history-item{
-    display:flex;
-    align-items:flex-start;
-    gap:16px;
-    margin-bottom:16px;
-}
-.history-item svg{
-    width:36px;
-    height:36px;
-    fill:var(--primary);
-    flex-shrink:0;
+.cta:hover{
+    opacity:0.85;
 }
 footer{
     margin-top:60px;
@@ -220,47 +180,26 @@ footer a:hover{
     align-items:center;
     gap:20px;
 }
-/* MOBILE STYLES */
+.footer-contact span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.footer-contact img{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+}
 @media(max-width:900px){
-    .hero, .section{
+    .section{
         flex-direction:column;
     }
-    .hero img, .section img{
+    .section img{
         height:auto;
     }
     .footer-flex{
         flex-direction:column;
         align-items:flex-start;
-    }
-}
-@media(max-width:600px){
-    .wrap {
-        padding:16px;
-    }
-    .hero h1 {
-        font-size:28px;
-    }
-    .hero p {
-        font-size:16px;
-    }
-    .cta {
-        padding:10px 16px;
-        font-size:16px;
-    }
-    .service h3 {
-        font-size:18px;
-    }
-    .service p {
-        font-size:14px;
-    }
-    .sponsors img {
-        max-height:50px;
-    }
-    .history h2 {
-        font-size:24px;
-    }
-    .history-item p {
-        font-size:14px;
     }
 }
 </style>
@@ -287,80 +226,58 @@ footer a:hover{
 </header>
 
 <main class="wrap">
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Spolehlivá likvidace odpadu a kontejnerová doprava</h1>
-            <p>Dlouholetá praxe, rychlé přistavení kontejnerů a férové ceny. Působíme v Praze a okolí.</p>
-            <a class="cta" href="/depona.cz/kontakt">Objednat kontejner</a>
-        </div>
-        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava7.jpg" alt="kontejner">
-    </section>
-
-    <section class="services">
-        <div class="service">
-            <h3>Kontejnery 3–13,5 m³</h3>
-            <p>Rychlé přistavení a odvoz dle domluvy.</p>
-        </div>
-        <div class="service">
-            <h3>Likvidace odpadu</h3>
-            <p>Stavební i komunální odpad, recyklace a ekologická likvidace.</p>
-        </div>
-        <div class="service">
-            <h3>Nákladní doprava</h3>
-            <p>Přeprava štěrku, kameniva, zeminy a sypkých materiálů.</p>
-        </div>
-        <div class="service">
-            <h3>Flexibilní služby</h3>
-            <p>Dokážeme se přizpůsobit Vašim požadavkům a zajistit spolehlivou dopravu.</p>
-        </div>
-    </section>
-
-    <section class="sponsors">
-        <h2 style="text-align:center; margin-bottom:24px; color:var(--primary);">Spolupracující firmy</h2>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; align-items:center;">
-            <a href="https://praha.eu/" target="_blank">
-                <img src="https://hokejiceksite.github.io/depona.cz/files/png/firmy/hlavni-mesto-praha.png" alt="Hlavní město Praha">
-            </a>
-            <a href="https://kronospan.com/cs_CZ/" target="_blank">
-                <img src="https://depona.cz/wp-content/uploads/2025/01/kronospan_logo_png.png" alt="Kronospan">
-            </a>
-            <a href="https://www.cvmem.cz/" target="_blank">
-                <img src="https://hokejiceksite.github.io/depona.cz/files/png/firmy/memsep.png" alt="Česká voda - MEMSEP">
-            </a>
-            <a href="https://www.psas.cz/" target="_blank">
-                <img src="https://hokejiceksite.github.io/depona.cz/files/png/firmy/prazske-sluzby.png" alt="Pražské služby">
-            </a>
-            <a href="https://www.freko.cz/" target="_blank">
-                <img src="https://hokejiceksite.github.io/depona.cz/files/png/firmy/freko.png" alt="Freko">
-            </a>
-            <a href="https://www.fcc-group.eu/ceska-republika/" target="_blank">
-                <img src="https://hokejiceksite.github.io/depona.cz/files/png/firmy/fcc.png" alt="FCC">
-            </a>
-        </div>
-    </section>
-
+    <!-- Historie -->
     <section class="history">
-        <h2>Naše historie</h2>
+        <h2>Historie a služby naší firmy</h2>
 
         <div class="history-item">
-            <svg viewBox="0 0 512 512"><path d="M436 480h-20V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v456H12c-6.627 0-12 5.373-12 12v20h448v-20c0-6.627-5.373-12-12-12zM128 76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76zm0 96c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40zm52 148h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12zm76 160h-64v-84c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v84zm64-172c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40z"/></svg>
-            <p><strong>1995, založení:</strong> Naše firma byla založena v roce 1995 jako fyzická osoba Jarmila Bílková-Depona. Do srpna 1998 byla naše provozovna umístěna v ul. Tiskařská, Praha 10-Malešice.</p>
+            <img src="https://hokejiceksite.github.io/depona.cz/files/svg/zalozeni.svg" alt="Založení firmy">
+            <div class="history-text">
+                <p><strong>1990 – Založení firmy:</strong> V lednu 1990 založil Bohuslav Bílek firmu zaměřenou na nákladní autodopravu.</p>
+            </div>
         </div>
 
         <div class="history-item">
-            <svg viewBox="0 0 576 512"><path d="M488 192H336v56c0 39.7-32.3 72-72 72s-72-32.3-72-72V126.4l-64.9 39C107.8 176.9 96 197.8 96 220.2v47.3l-80 46.2C.7 322.5-4.6 342.1 4.3 357.4l80 138.6c8.8 15.3 28.4 20.5 43.7 11.7L231.4 448H368c35.3 0 64-28.7 64-64h16c17.7 0 32-14.3 32-32v-64h8c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24zm147.7-37.4L555.7 16C546.9.7 527.3-4.5 512 4.3L408.6 64H306.4c-12 0-23.7 3.4-33.9 9.7L239 94.6c-9.4 5.8-15 16.1-15 27.1V248c0 22.1 17.9 40 40 40s40-17.9 40-40v-88h184c30.9 0 56 25.1 56 56v28.5l80-46.2c15.3-8.9 20.5-28.4 11.7-43.7z"/></svg>
-            <p><strong>2005, sloučení firmy:</strong> V lednu 2005 se firma Bohuslav Bílek – nákladní autodoprava a firma Jarmila Bílková – Depona sloučily ve firmu DE.PO.NA PRAHA, s.r.o.</p>
+            <img src="https://hokejiceksite.github.io/depona.cz/files/svg/prevod-firmy.svg" alt="Založení firmy">
+            <div class="history-text">
+                <p><strong>1995 – Založení firmy:</strong> Firma Jarmila Bílková–Depona byla založena jako samostatná provozovna, umístěná v ulici Tiskařská, Praha 10 – Malešice.</p>
+            </div>
         </div>
 
         <div class="history-item">
-            <svg viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 320c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>
-            <p><strong>2009, nová provozovna:</strong> Od října 2009 máme nově otevřenou provozovnu v ul. Pramenná, Praha 4 – Kunratice.</p>
+            <img src="https://hokejiceksite.github.io/depona.cz/files/svg/nova-provozovna.svg" alt="Nová provozovna">
+            <div class="history-text">
+                <p><strong>2001 – Druhá provozovna:</strong> V červnu 2001 byla otevřena druhá provozovna v ulici Gen. Šišky, Praha 4 – Modřany. Tato provozovna je dnes uzavřena.</p>
+            </div>
         </div>
 
-        <a class="cta" href="/depona.cz/o-nas">O nás</a>
+        <div class="history-item">
+            <img src="https://hokejiceksite.github.io/depona.cz/files/svg/slouceni-firmy.svg" alt="Sloučení firem">
+            <div class="history-text">
+                <p><strong>2005 – Sloučení firem:</strong> Firmy Bohuslav Bílek – nákladní autodoprava a Jarmila Bílková – Depona se sloučily a vznikla firma DE.PO.NA PRAHA, s.r.o.</p>
+            </div>
+        </div>
+
+        <div class="history-item">
+            <img src="https://hokejiceksite.github.io/depona.cz/files/svg/nova-provozovna.svg" alt="Nová provozovna 2009">
+            <div class="history-text">
+                <p><strong>2009 – Nová provozovna:</strong> Od října 2009 působí provozovna na adrese Pramenná 3, Praha 4 – Kunratice. Firma nabízí příjem a likvidaci odpadů, autodopravu velkoobjemovými návěsy, prodej písku, kameniva, štěrků, zahradní zeminy a rozvoz materiálu na místo určení.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Služby -->
+    <section class="section">
+        <img src="https://depona.cz/wp-content/uploads/2025/01/depona-doprava7.jpg" alt="Služby DE.PO.NA">
+        <div class="section-text">
+            <h2>Naše služby</h2>
+            <p>Naše firma poskytuje komplexní služby v oblasti nakládání s odpady: příjem odpadů, ekologická likvidace, autodoprava velkoobjemovými návěsy, prodej písku, kameniva, štěrků a zahradní zeminy. Dále zajišťujeme rozvoz materiálu na místo určení a kontejnerovou dopravu od 3 m³ do 13,5 m³.</p>
+            <p>Náš spolehlivý tým pracovníků je pravidelně proškolován a poradí s čímkoli v oblasti odvozu a likvidace odpadu.</p>
+        </div>
     </section>
 </main>
 
+<!-- Patička -->
 <footer>
   <div class="footer-flex">
     <div style="display:flex; gap:20px; flex-wrap:wrap;">
@@ -371,20 +288,18 @@ footer a:hover{
       <a href="/depona.cz/cenik">Ceník</a>
       <a href="/depona.cz/kontakt">Kontakt</a>
     </div>
-    <div style="display:flex; gap:15px; flex-wrap:wrap; font-size:13px; align-items:center;">
-      <span style="display:flex; align-items:center; gap:4px;">
-        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/telefon.svg" alt="Telefon" width="14" height="14">
+    <div class="footer-contact" style="display:flex; gap:20px; flex-wrap:wrap; font-size:13px; align-items:center;">
+      <span>
+        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/telefon.svg" alt="telefon">
         <a href="tel:+420777349447">+420 777 349 447</a>
       </span>
-      <span style="display:flex; align-items:center; gap:4px;">
-        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/mail.svg" alt="Email" width="14" height="14">
+      <span>
+        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/mail.svg" alt="email">
         <a href="mailto:depona@depona.cz">depona@depona.cz</a>
       </span>
-      <span style="display:flex; align-items:center; gap:4px;">
-        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/lokalita.svg" alt="Adresa" width="14" height="14">
-        <a href="https://mapy.cz/zakladni?source=firm&id=1964010" target="_blank">
-          ulice Pramenná, 148 00 Praha 4 – Kunratice
-        </a>
+      <span>
+        <img src="https://hokejiceksite.github.io/depona.cz/files/svg/lokalita.svg" alt="lokalita">
+        <a href="https://mapy.cz/zakladni?source=firm&id=1964010" target="_blank">ulice Pramenná 3, 148 00 Praha 4 – Kunratice</a>
       </span>
     </div>
   </div>
